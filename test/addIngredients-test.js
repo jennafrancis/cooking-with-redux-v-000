@@ -45,22 +45,23 @@ describe('addIngredients', () => {
   })
 })
 
-describe('addIngredient', () => {
-  it('displays an addIngredient component for each ingredient', () => {
-    let store = configureStore()
-    let ingredient = {id: 1, name: 'dough'}
-    const wrapper = mount(
-      <Provider store={store}>
-        < ConnectedAddIngredient {...ingredient} />
-      </Provider>
-    )
-    let WrapperConnectedAddIngredient = wrapper.find(ConnectedAddIngredient).first()
-    let WrapperAddIngredient = wrapper.find(AddIngredient).first()
-    const button = WrapperAddIngredient.find('button').first()
-    button.simulate('click')
-    expect(store.getState().recipeForm.ingredientIds).to.include(ingredient.id)
-  })
-})
+// DUPLICATE TEST
+// describe('addIngredient', () => {
+//   it('displays an addIngredient component for each ingredient', () => {
+//     let store = configureStore()
+//     let ingredient = {id: 1, name: 'dough'}
+//     const wrapper = mount(
+//       <Provider store={store}>
+//         < ConnectedAddIngredient {...ingredient} />
+//       </Provider>
+//     )
+//     let WrapperConnectedAddIngredient = wrapper.find(ConnectedAddIngredient).first()
+//     let WrapperAddIngredient = wrapper.find(AddIngredient).first()
+//     const button = WrapperAddIngredient.find('button').first()
+//     button.simulate('click')
+//     expect(store.getState().recipeForm.ingredientIds).to.include(ingredient.id)
+//   })
+// })
 
 describe('addIngredients with Recipe', () => {
 
